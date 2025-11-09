@@ -1,0 +1,199 @@
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --accent: #1f8f6b;
+  --muted: #6b7280;
+  --radius: 10px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background: var(--bg);
+  color: #111827;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45;
+  font-size: 16px;
+}
+
+/* Cabeçalho */
+.site-header {
+  background: linear-gradient(90deg, #0f5132 0%, #176d4b 100%);
+  color: white;
+  padding: -50px 0 8px;
+  border-bottom: 4px solid rgba(255, 255, 255, 0.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.3px;
+}
+
+.subtitle {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+/* Conteúdo principal */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  padding: 20px;
+}
+
+/* Cartão de login */
+.login-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  padding: 36px 28px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.login-card h2 {
+  color: var(--accent);
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.login-subtext {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Formulário */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+
+.login-form label {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.login-form input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.2s;
+}
+
+.login-form input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* Botões */
+.btn {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: white;
+  transition: background 0.2s;
+}
+
+.btn.primary:hover {
+  background: #16694c;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+/* Link de cadastro */
+.signup-link {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.signup-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+.site-footer {
+  padding: 18px 0;
+  background: transparent;
+  color: var(--muted);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* Animação */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 28px 20px;
+  }
+
+  .login-card h2 {
+    font-size: 20px;
+  }
+}
+
+
+#btn-inicio{
+  margin-left: auto; /* empurra pro canto direito */
+}
+
+#logo {
+  height: 150px;      /* tamanho ideal para header */
+  width: auto;       /* mantém proporção */
+  object-fit: contain;
+  cursor: pointer;
+  margin-left: 0px; /* empurra para direita */
+  display: block;
+}

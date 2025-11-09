@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Green Trip — Detalhes da Trilha</title>
+  <link rel="stylesheet" href="trilha.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="image/logo1.png" alt="logo" id="logo">
+      </div>
+
+      <div class="controls">
+        <input type="search" placeholder="Buscar trilhas, locais ou atividades" aria-label="buscar trilhas" />
+        <button class="btn primary" onclick="window.location.href='login.html'">Entrar</button>
+        <button class="btn primary" onclick="window.location.href='cadastro.html'">Inscrever-se</button>
+      </div>
+    </div>
+
+    <nav class="activities container">
+      <ul class="activity-list" aria-label="Atividades">
+        <li><button class="btn primary" onclick="window.location.href='index.html'">Início</button></li>
+        <li><button class="btn primary">Cachoeiras</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 🔹 Modal da Galeria -->
+<div id="galleryModal" class="gallery-modal" style="display:none;">
+  <button class="close-btn" onclick="closeGallery()">✕</button>
+  <button class="prev-btn" onclick="changeImage(-1)">❮</button>
+  <img id="galleryImage" src="" alt="Galeria">
+  <button class="next-btn" onclick="changeImage(1)">❯</button>
+</div>
+
+
+  <main class="container main-grid">
+    <aside class="sidebar">
+      <section class="card filter">
+        <h3>Informações</h3>
+        <p id="localizacao"><i class="fa-solid fa-location-pin"></i> <span></span></p>
+        <p><img src="image/trilhaicon.png" alt="ícone trilha" width="20"> <span id="distancia"></span></p>
+        <p id="descricao"></p>
+      </section>
+    </aside>
+
+    <div class="trails-grid">
+      <article class="trail-card">
+        <button id="thumb" class="thumb" onclick="openGallery()" style="background-size:cover;"></button>
+
+
+        <div class="card-body">
+          <h2 id="titulo"></h2>
+
+          <div class="rating-section">
+            <h3>Avalie este local:</h3>
+            <div class="stars" id="stars">
+              <i class="fa-solid fa-star" data-value="1"></i>
+              <i class="fa-solid fa-star" data-value="2"></i>
+              <i class="fa-solid fa-star" data-value="3"></i>
+              <i class="fa-solid fa-star" data-value="4"></i>
+              <i class="fa-solid fa-star" data-value="5"></i>
+            </div>
+            <p id="media-avaliacao">Média: <span>–</span> (<span id="qtd-avaliacoes">0</span> avaliações)</p>
+          </div>
+
+          <h3>Localização no mapa:</h3>
+          <div id="mapa-container"></div>
+
+          <section id="comentarios">
+            <h3>Comentários</h3>
+            <div id="comment-area"></div>
+            <div id="comentarios-lista"></div>
+          </section>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>GreenTrip</p>
+      <small>© 2025</small>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="trilhas.js"></script>
+  <script src="galeria.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // obtém o ID da trilha pela URL
+      const params = new URLSearchParams(window.location.search);
+      const id = params.get("id");
+
+      if (!id || !trilhas[id]) {
+        document.body.innerHTML = "<h2>❌ Trilha não encontrada.</h2>";
+        return;
+      }
+
+      const trilha = trilhas[id];
+      document.title = "Green Trip — " + trilha.nome;
+
+      // Preenche dados no HTML
+      document.getElementById("titulo").textContent = trilha.nome;
+      document.getElementById("distancia").textContent = trilha.distancia;
+      document.getElementById("descricao").textContent = trilha.descricao;
+      document.getElementById("thumb").style.backgroundImage = `url('${trilha.imagem}')`;
+      document.getElementById("localizacao").querySelector("span").textContent = trilha.localizacao;
+      document.getElementById("mapa-container").innerHTML = trilha.mapa;
+
+      // Atualiza id da seção de estrelas para o JS saber qual trilha
+      document.getElementById("stars").dataset.id = id;
+    });
+  </script>
+</body>
+</html>

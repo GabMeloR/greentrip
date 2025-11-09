@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trilhas — Santa Catarina (protótipo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="image/logo1.png" alt="logo" id="logo">
+      </div>
+      <div class="controls">
+        <button class="btn primary" onclick="window.location.href='login.html'">Entrar</button>
+        <button class="btn primary" onclick="window.location.href='cadastro.html'">Inscrever-se</button>
+        <button class="btn primary" onclick="window.location.href='sobre.html'">Sobre nós</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-banner"></div>
+
+<p id="p-inicio">AJUDAMOS VOCÊ A EXPLORAR O DESCONHECIDO</p>
+    <input class="search-home" type="search" placeholder="Buscar trilhas, locais ou atividades" aria-label="buscar trilhas" />
+
+  <main class="container main-grid">
+    <!-- SIDEBAR -->
+    <aside class="sidebar" aria-label="Filtros">
+      <section class="card filter">
+        <h3>Filtrar por</h3>
+        <label><input type="checkbox" checked /> Fácil</label><br/>
+        <label><input type="checkbox" /> Médio</label><br/>
+        <label><input type="checkbox" /> Difícil</label>
+      </section>
+
+    </aside>
+
+    <!-- LISTAGEM -->
+    <section class="content">
+      <div class="toolbar">
+
+        <div class="sort">
+          <label for="sort">Ordenar:</label>
+          <select id="sort">
+            <option>Mais populares</option>
+            <option>Mais recentes</option>
+            <option>Mais bem avaliadas</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="trails-grid">
+        <!-- Card -->
+        <article class="trail-card" data-id="jupia">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">Cachoeira do Jupiá</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+        <article class="trail-card" data-id="local-1">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">local-1</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=tresvoltas">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+<article class="trail-card" data-id="local-2">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">local-2</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+<article class="trail-card" data-id="local-3">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">local-3</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+<article class="trail-card" data-id="local-4">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">local-4</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+<article class="trail-card" data-id="local-5">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">Cachoeira do Jupiá</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+
+<article class="trail-card" data-id="local-6">
+  <div class="thumb" style="background-image: url('image/cachjupia1.jpg');"></div>
+  <div class="card-body">
+    <h3 class="title">Cachoeira do Jupiá</h3>
+    <p class="meta">Trilha de 400 m • Fácil • ~15 min</p>
+    <div class="tags">
+      <span class="tag">Acesso livre</span>
+    </div>
+    <div class="card-footer">
+      <div class="rating">
+        ⭐ <span class="media-valor">–</span> <span class="qtd-avaliacoes">(0)</span>
+      </div>
+      <a class="btn ghost" href="trilha.html?id=jupia">Ver detalhes</a>
+    </div>
+  </div>
+</article>
+      
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>GreenTrip</p>
+      <small>© 2025</small>
+    </div>
+  </footer>
+  <script src="galeria.js"></script>
+
+</body>
+</html>

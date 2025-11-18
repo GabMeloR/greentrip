@@ -1,0 +1,185 @@
+/* ============================
+   PUBLICAR — GREEN TRIP
+   ============================ */
+
+:root {
+  --bg: #f6f7f9;
+  --card: #ffffff;
+  --accent: #1f8f6b;
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 8px 24px rgba(15,23,42,0.08);
+  font-family: Inter, system-ui, -apple-system;
+}
+
+/* Container principal */
+
+.publicar-container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: fadeIn .3s ease-in-out;
+}
+
+.publicar-container h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--accent);
+}
+
+.publicar-container p {
+  color: var(--muted);
+  margin-bottom: 25px;
+}
+
+/* Formulário */
+
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #dcdcdc;
+  font-size: 16px;
+  background: #fafafa;
+  transition: border .2s, background .2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  background: #fff;
+  outline: none;
+}
+
+/* Upload box */
+
+.upload-box {
+  border: 2px dashed #b4b4b4;
+  border-radius: 14px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  color: #666;
+  font-size: 15px;
+  transition: .25s;
+  background: #fcfcfc;
+}
+
+.upload-box:hover {
+  border-color: var(--accent);
+  background: #eefcf6;
+  color: var(--accent);
+}
+
+#preview {
+  width: 100%;
+  max-height: 280px;
+  object-fit: cover;
+  margin-top: 18px;
+  border-radius: 12px;
+  display: none;
+  box-shadow: var(--shadow);
+}
+
+/* Botão principal */
+
+.btn-submit {
+  margin-top: 20px;
+  padding: 14px;
+  font-size: 18px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.btn-submit:hover {
+  background: #176d4b;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.14);
+}
+
+/* ============================
+   ANIMAÇÃO
+   ============================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    .editar-container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15,23,42,0.08);
+    }
+
+    .preview-img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      margin-bottom: 15px;
+    }
+
+    /* Galeria */
+    .galeria-wrapper {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .galeria-item {
+      position: relative;
+    }
+
+    .galeria-item img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .btn-remover-img {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      background: rgba(0,0,0,0.55);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      font-size: 14px;
+    }

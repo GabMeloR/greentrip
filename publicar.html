@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Publicar trilha — GreenTrip</title>
+
+  <!-- CSS geral do site -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CSS específico da página publicar -->
+  <link rel="stylesheet" href="publicar.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="image/logo1.png" id="logo">
+    </div>
+    <div class="controls">
+      <button class="btn primary" onclick="window.location.href='index.html'">Início</button>
+      <button class="btn primary" onclick="window.location.href='minhas.html'">Minhas Publicações</button>
+      <button class="btn primary" onclick="window.location.href='login.html'">Entrar</button>
+    </div>
+  </div>
+</header>
+
+
+<!-- CONTAINER PADRÃO GREENTRIP -->
+<div class="publicar-container">
+
+  <h1>Nova publicação</h1>
+  <p>Preencha todos os campos para cadastrar uma nova trilha.</p>
+
+  <form id="form-publicar">
+
+    <!-- Nome -->
+    <div class="form-group">
+      <label for="nome">Nome da trilha</label>
+      <input type="text" id="nome" required>
+    </div>
+
+    <!-- Distância -->
+    <div class="form-group">
+      <label for="distancia">Distância / dificuldade / duração</label>
+      <input type="text" id="distancia" placeholder="Ex: Trilha de 400 m • Fácil • ~15 min" required>
+    </div>
+
+    <!-- Localização -->
+    <div class="form-group">
+      <label for="localizacao">Localização</label>
+      <input type="text" id="localizacao" placeholder="Cidade - Estado" required>
+    </div>
+
+    <!-- Descrição -->
+    <div class="form-group">
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" rows="5" required></textarea>
+    </div>
+
+    <!-- Imagem -->
+    <div class="form-group">
+      <label>Imagem principal</label>
+
+      <div class="upload-box" onclick="document.getElementById('imagem').click()">
+        Clique para enviar uma imagem
+      </div>
+
+      <input type="file" id="imagem" accept="image/*" style="display:none;">
+      <img id="preview">
+    </div>
+
+    <!-- Galeria -->
+    <div class="form-group">
+      <label>Galeria (opcional — múltiplas imagens)</label>
+      <input type="file" id="galeria" accept="image/*" multiple>
+    </div>
+
+    <!-- Mapa -->
+    <div class="form-group">
+      <label>Mapa (cole aqui o iframe do Google Maps)</label>
+      <textarea id="mapa" rows="4" placeholder="<iframe ...></iframe>" required></textarea>
+    </div>
+
+    <button class="btn-submit" type="submit">Publicar</button>
+
+  </form>
+</div>
+
+
+<footer class="site-footer">
+  <div class="container">
+    <p>GreenTrip</p>
+    <small>© 2025</small>
+  </div>
+</footer>
+
+<script src="publicar.js"></script>
+
+</body>
+</html>

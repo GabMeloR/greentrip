@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Minhas publicações — GreenTrip</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="image/logo1.png" id="logo">
+    </div>
+    <div class="controls">
+      <button class="btn primary" onclick="window.location.href='index.html'">Início</button>
+      <button class="btn primary" onclick="window.location.href='publicar.html'">Nova publicação</button>
+      <button class="btn primary" onclick="window.location.href='login.html'">Entrar</button>
+    </div>
+  </div>
+</header>
+
+<div class="container" style="padding:40px 0;">
+  <h1>Minhas publicações</h1>
+  <p style="max-width:700px;font-size:17px;margin-bottom:20px;">
+    Aqui estão todas as trilhas publicadas por você.
+  </p>
+
+  <div id="lista-publicacoes" class="trails-grid"></div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>GreenTrip</p>
+    <small>© 2025</small>
+  </div>
+</footer>
+
+<script src="painel.js"></script>
+</body>
+</html>

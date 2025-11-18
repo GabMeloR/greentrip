@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Trilhas — GreenTrip</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <img src="image/logo1.png" alt="logo" id="logo">
+    </div>
+
+    <div class="controls">
+      <button class="btn primary" id="btn-entrar" onclick="window.location.href='login.html'">Entrar</button>
+      <button class="btn primary" id="btn-cadastro" onclick="window.location.href='cadastro.html'">Inscrever-se</button>
+      <button class="btn primary" onclick="window.location.href='sobre.html'">Sobre nós</button>
+      <button class="btn primary" id="btn-publicar" style="display:none;" onclick="window.location.href='publicar.html'">Publicar</button>
+      <button class="btn primary" id="btn-minhas" style="display:none;" onclick="window.location.href='minhas-publicacoes.html'">Minhas Publicações</button>
+
+    </div>
+  </div>
+</header>
+
+<div class="hero-banner"></div>
+
+<p id="p-inicio">AJUDAMOS VOCÊ A EXPLORAR O DESCONHECIDO</p>
+<input class="search-home" type="search" placeholder="Buscar trilhas, locais ou atividades" aria-label="buscar trilhas" />
+
+<main class="container main-grid">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" aria-label="Filtros">
+    <section class="card filter">
+      <h3>Filtrar por</h3>
+      <label><input type="checkbox" checked /> Trilhas</label><br/>
+      <label><input type="checkbox" id="filtro-minhas" /> Minhas Publicações</label><br/>
+    </section>
+  </aside>
+
+  <!-- LISTAGEM -->
+  <section class="content">
+    <div class="toolbar">
+      <div class="sort">
+        <label for="sort">Ordenar:</label>
+        <select id="sort">
+          <option>Mais populares</option>
+          <option>Mais recentes</option>
+          <option>Mais bem avaliadas</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- AQUI OS CARDS DINÂMICOS SERÃO GERADOS -->
+    <div id="lista-trilhas" class="trails-grid"></div>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>GreenTrip</p>
+    <small>© 2025</small>
+  </div>
+</footer>
+
+<script src="trilhas.js"></script>
+<script src="galeria.js"></script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+    const btnEntrar = document.getElementById("btn-entrar");
+    const btnCadastro = document.getElementById("btn-cadastro");
+    const btnPublicar = document.getElementById("btn-publicar");
+    const btnMinhas = document.getElementById("btn-minhas");
+
+    if (usuario) {
+      // usuário logado
+      btnEntrar.textContent = "Sair";
+      btnCadastro.style.display = "none";
+      btnPublicar.style.display = "inline-block";
+      btnMinhas.style.display = "inline-block";
+
+      btnEntrar.onclick = () => {
+        if (confirm("Deseja sair da sua conta?")) {
+          localStorage.removeItem("usuario");
+          window.location.reload();
+        }
+      };
+
+    } else {
+      // usuário NÃO logado
+      btnPublicar.style.display = "none";
+      btnMinhas.style.display = "none";
+    }
+  });
+</script>
+
+
+</body>
+</html>
